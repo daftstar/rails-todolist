@@ -35,7 +35,12 @@
       // Instantiate a new, empty collection of tasks
       var tasks = new Tasks();
       var taskList = <%=raw @tasks.to_json %>;
-      console.log(taskList);
+
+      for (var i = 0; i < taskList.length; i++) {
+        console.log("task name: " + taskList[i].name);
+      }
+
+
 
       // Create a new list view for our collection.
       // We tell it exactly where we want it to render (#task-list).
