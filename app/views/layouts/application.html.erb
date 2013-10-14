@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RailsApl</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <%= yield %>
+  <%= javascript_include_tag "application" %>
+  <!-- this allows the page to load in JS when the content_for :javascript is called - see welcome.html.erb -->
+  <%= yield :javascript %>
+
+
+</body>
+</html>

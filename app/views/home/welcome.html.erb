@@ -1,0 +1,39 @@
+<h3>Home - welcome</h3>
+<p>Find me in app/views/home/welcome.html.erb</p>
+<hr>
+
+
+<div class="container">
+  <h1>Life Goals</h1>
+
+  <form class="new-task">
+    <input name="task_name" type="text" placeholder="Type a new task here..." />
+    <button>Add Task</button>
+  </form>
+
+  <div id="task-list"></div>
+</div>
+
+
+<div id="templates">
+
+  <script class="task" type="text/template">
+    <label>
+      <input class="check" type="checkbox" />
+      {{ name }}
+    </label>
+  </script>
+
+</div>
+
+
+<% content_for :javascript do %>
+  <script type="text/javascript">
+    (function () {
+
+      var task = new Task({ name: 'buy a sparkly shoe' });
+      console.log('check it:', task.get('name'));
+
+    })();
+  </script>
+<% end %>
